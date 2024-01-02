@@ -1,6 +1,6 @@
 #!/bin/bash
-NUM1=20
-NUM2=30
+NUM1=$1
+NUM2=$2
 
 SUM=$((NUM1+NUM2))
 echo "The Addition of 2 digits : $SUM"
