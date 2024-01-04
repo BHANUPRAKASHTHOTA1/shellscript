@@ -1,24 +1,20 @@
 #!/bin/bash
 
-USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$2.... Failure"
+        echo -e "$2.... $R Failure $N"
         exit 1
     else
-        echo "$2.... Success"
+        echo -e "$2.... $G Success $N"
     fi
 }
 
 
-
-if [ $USERID -ne 0 ]
-then
-    echo "ERROR::Please run this script with root access"
-    exit 1
-fi
 yum install mysql -y
 VALIDATE $? "Installing MYSQL"
 
